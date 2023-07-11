@@ -37,11 +37,58 @@
 	<!-- Animal클래스를 default생성자로 생성해서 bean으로 등록 -->
 	<!-- <beans:bean id="bbo" class="com.bs.spring.beantest.Animal"/> -->
 	<!-- pojo 생성 시 setter를 이용해서 데이터를 넣어서 생성시키기  -->
-	<beans:bean id="bbo" class="com.bs.spring.beantest.Animal">
+<!-- 	<beans:bean id="bbo" class="com.bs.spring.beantest.Animal">
+		beans:property name="필드명(변수명)" value="setter로 넣을값" 
 		<beans:property name="name" value="뽀숑"/>
 		<beans:property name="age" value="3"/>
 		<beans:property name="height" value="50.4"/>
+	</beans:bean> -->
+	
+	<!-- 매개변수있는 생성자를 이용해서 생성시키기 -->
+	<beans:bean id="bbo" class="com.bs.spring.beantest.Animal">
+		<!-- <beans:constructor-arg index="인덱스번호(0번부터)" value="넣을값"/> -->
+		<beans:constructor-arg index="0" value="뽀숑"/>
+		<beans:constructor-arg index="1" value="3"/>
+		<!--매개변수 2개만 있는 생성자 이용하기 위해서 주석처리  -->
+		<!-- <beans:constructor-arg index="2" value="50.4"/> -->
 	</beans:bean>
 	
+	<beans:bean id="dog" class="com.bs.spring.beantest.Animal">
+		<beans:property name="name" value="뽀삐"/>
+	</beans:bean>
+		
+	<!-- 
+		<beans:bean id="" class="" init-method="" destroy-method="">
+		init-method는 실행할때 불러올 메소드설정
+		destroy-method 종료할때 불러올 메소드설정
+	 -->		
+	<beans:bean id="emp" 
+		class="com.bs.spring.beantest.Employee" 
+		init-method="initialMethod" destroy-method="destroyMethod" >
+		<beans:property name="name" value="최주영"/>
+		<beans:property name="age" value="24"/>
+		<beans:property name="address" value="경기도 안양시"/>
+		<beans:property name="salary" value="100"/>
+		<!-- <beans:property name="필드명" ref="참조할 beans:bean id=값"/> -->
+		<beans:property name="dept" ref="dept"/>
+	</beans:bean>
+	
+	<!--
+		등록하는 bean이 다른클래스와 연관관계(참조)가 설정되어있을 때는
+		다른 bean을 등록해야한다.
+		ref속성을 이용해서 설정한다.  
+	-->
+	<beans:bean id="dept" class="com.bs.spring.beantest.Department">
+		<beans:constructor-arg index="0" value="1"/>
+		<beans:constructor-arg index="1" value="개발부"/>
+		<beans:constructor-arg index="2" value="판교"/>
+	</beans:bean>
+	
+	<beans:bean id="emp2" class="com.bs.spring.beantest.Employee">
+		<beans:constructor-arg index="0" ref="dept"/>
+	</beans:bean>
+	
+	<!--다른 xml파일을 참조해올수 있다.-->
+	<!-- <beans:import resource=""/> -->
 	
 </beans:beans>
