@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="path" value="${pageContext.request.contextPath }" />
 <jsp:include page="/WEB-INF/views/common/header.jsp">
-	<jsp:param name="title" value="데모결과" />
+	<jsp:param name="title" value="파라미터테스트" />
 </jsp:include>
 <style>
 table#tbl-dev {
@@ -29,12 +29,14 @@ table#tbl-dev {
 			<th>성별</th>
 			<td>${demo.devGender }</td>
 		</tr>
-		
-			<tr>
-				<th>개발가능언어</th>
-				<td><c:forEach var="l" items="${demo.devLang }" varStatus="la"> ${l.concat(la.last?'':',')} </c:forEach></td>
-			</tr>
-	
+		<tr>
+			<th>개발가능언어</th>
+			<td><c:forEach var="l" items="${demo.devLang }" varStatus="la"> ${l.concat(la.last?'':',')}</c:forEach></td>
+		</tr>
+		<tr>
+			<th>생년월일</th>
+			<td>${demo.birthDay }</td>
+		</tr>
 	</table>
 </section>
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />

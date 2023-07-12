@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<c:set var="path" value="${pageContext.request.contextPath }"/>	
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="path" value="${pageContext.request.contextPath }" />
 <jsp:include page="/WEB-INF/views/common/header.jsp">
 	<jsp:param name="title" value="요청처리테스트" />
 </jsp:include>
@@ -64,16 +64,100 @@
 				</div>
 			</div>
 			<div class="form-group row">
+				<label for="birthDay" class="col-sm-2 col-form-label">생년월일</label>
+				<div class="col-sm-10">
+					<input type="date" class="form-control" id="birthDay" name="birthDay">
+				</div>
+			</div>
+			<div class="form-group row">
 				<div class="col-sm-12">
-					<button type="button" class="col-sm-12 btn btn-outline-primary" onclick="requestSend('demo/demo1.do')">
-						spring 메소드 서블릿처럼이용하기
-					</button>
+					<button type="button" class="col-sm-12 btn btn-outline-primary"
+						onclick="requestSend('/demo/demo1.do')">spring 메소드
+						서블릿처럼이용하기</button>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-sm-12">
+					<button type="button" class="col-sm-12 btn btn-outline-primary"
+						onclick="requestSend('/demo/demo2.do')">
+						1:1로 매칭해서 데이터를 받기</button>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-sm-12">
+					<button type="button" class="col-sm-12 btn btn-outline-primary"
+						onclick="requestSend('/demo/demo3.do')">
+						@RequestParam이용해서 데이터 받기</button>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-sm-12">
+					<button type="button" class="col-sm-12 btn btn-outline-primary"
+						onclick="requestSend('/demo/demo4.do')">
+						Vo(command)를 이용해서데이터를 받기</button>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-sm-12">
+					<button type="button" class="col-sm-12 btn btn-outline-primary"
+						onclick="requestSend('/demo/demo5.do')">
+						Map을 이용해서 데이터 받기</button>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-sm-12">
+					<button type="button" class="col-sm-12 btn btn-outline-primary"
+						onclick="requestSend('/demo/demo6.do')">
+						추가데이터 확인하기</button>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-sm-12">
+					<button type="button" class="col-sm-12 btn btn-outline-primary"
+						onclick="requestSend('/demo/demo7.do')">
+						ModelAndView이용하기</button>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-sm-12">
+					<button type="button" class="col-sm-12 btn btn-outline-primary"
+						onclick="requestSend('/demo/demo8.do')">
+						@ResponseBody이용하기</button>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-sm-12">
+					<button type="button" class="col-sm-12 btn btn-outline-primary"
+						onclick="requestSend('/demo/demo9.do')">
+						방식에 따라 요청처리하기</button>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-sm-12">
+					<button type="button" class="col-sm-12 btn btn-outline-primary"
+						onclick="isertDemo()">
+						등록하기</button>
+				</div>
+			</div>
+			<div class="form-group row">
+				<div class="col-sm-12">
+					<button type="button" class="col-sm-12 btn btn-outline-primary"
+						onclick="selectDemoAll('/demo/selectDemoAll.do')">
+						조회하기</button>
 				</div>
 			</div>
 		</form>
 	</div>
 </section>
 <script>
+	const selectDemoAll=(url)=>{
+		location.assign("${path}/"+url);
+		
+	}
+	const isertDemo=()=>{
+		$("#devFrm").attr("action","${path}/demo/insertDemo.do");
+		$("#devFrm").submit();
+	}
 	const requestSend=(url)=>{
 		$("#devFrm").attr("action","${path}/"+url);
 		$("#devFrm").submit();
