@@ -28,9 +28,9 @@ public class DemoServiceImpl implements DemoService {
 		return dao.selectDemoAll(session);
 	}
 	
-	@Override
-	public int updateDemo(Long no) {
-		return dao.updateDemo(session,no);
-	}
+//	@Override
+//	public int updateDemo(Long no) {
+//		return dao.updateDemo(session,no);
+//	}
 
 }

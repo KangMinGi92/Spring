@@ -10,5 +10,5 @@ public interface DemoService {
 	
 	List<Demo> selectDemoAll();
 	
-	int updateDemo(Long no);
+//	int updateDemo(Long no);
 }

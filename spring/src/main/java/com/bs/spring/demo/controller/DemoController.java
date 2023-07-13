@@ -9,6 +9,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,8 +32,12 @@ import com.bs.spring.demo.service.DemoService;
 @Controller
 public class DemoController {
 	
+	private Logger logger=LoggerFactory.getLogger(DemoController.class);
+	
 	@Autowired
 	DemoService service;
+	
+	
 	@RequestMapping("/demo/demo.do")
 	public String demo() {
 		// /WEB-INF/views/demo/demo.jsp
@@ -75,8 +81,12 @@ public class DemoController {
 	//서블릿 방식으로 매핑메소드 이용하기
 	@RequestMapping("/demo/demo1.do")
 	public void demo1(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException{
-		System.out.println(req);
-		System.out.println(res);
+//		logger.debug(req);
+		//debug(Stirng값만받음)
+		logger.debug("request : {}",req);
+		logger.debug("reponse : {}",res);
+//		System.out.println(req);
+//		System.out.println(res);
 		String devName=req.getParameter("devName");
 		int devAge=Integer.parseInt(req.getParameter("devAge"));
 		String devGender=req.getParameter("devGender");
@@ -84,7 +94,8 @@ public class DemoController {
 		String[] devLang=req.getParameterValues("devLang");
 		System.out.println(devName+devAge+devGender+devEmail);
 		for(String l : devLang) {
-			System.out.println(l);
+			//System.out.println(l);
+			logger.debug(l);
 		}
 		Demo d=Demo.builder().
 				devName(devName).devAge(devAge).devEmail(devEmail).devGender(devGender).devLang(devLang).build();
@@ -256,11 +267,11 @@ public class DemoController {
 		return "demo/demoList";
 	}
 	
-	@RequestMapping("/demo/updateDemo.do")
-	public String updateDemo(Long no,Model m) {
-		int result=service.updateDemo(no);
-		return "";
-	}
+//	@RequestMapping("/demo/updateDemo.do")
+//	public String updateDemo(Long no,Model m) {
+//		int result=service.updateDemo(no);
+//		return "";
+//	}
 	
 	
 	

@@ -5,7 +5,10 @@
 <jsp:include page="/WEB-INF/views/common/header.jsp">
 	<jsp:param name="title" value="요청처리테스트" />
 </jsp:include>
-
+<style>
+div#demo-container{ width:50%; padding:15px; margin:0 auto; border:1px
+solid lightgray; border-radius:10px; }
+</style>
 <section id="content">
 	<div id="demo-container">
 		<form id="devFrm" method="post">

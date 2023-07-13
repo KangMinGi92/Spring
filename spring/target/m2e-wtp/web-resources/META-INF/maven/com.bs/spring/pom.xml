@@ -10,6 +10,7 @@
 		<org.springframework-version>5.3.28</org.springframework-version>
 		<org.aspectj-version>1.9.19</org.aspectj-version>
 		<org.slf4j-version>2.0.7</org.slf4j-version>
+		<org.springsecurity-version>5.8.4</org.springsecurity-version>
 	</properties>
 	<dependencies>
 		<!-- Spring -->
@@ -174,7 +175,31 @@
 		    <artifactId>commons-dbcp</artifactId>
 		    <version>1.4</version>
 		</dependency>
+		
+		<!--
+			비밀번호 암호화 처리하기
+			spring-security모듈을 이용해서 암호화처리를 하자.
+			단방향 암호화만 제공
+		-->
+		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-core</artifactId>
+		    <version>${org.springsecurity-version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-web</artifactId>
+		    <version>${org.springsecurity-version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework.security</groupId>
+		    <artifactId>spring-security-config</artifactId>
+		    <version>${org.springsecurity-version}</version>
+		</dependency>
 
+		
+		
 		<!-- Test -->
 		<dependency>
 			<groupId>junit</groupId>

@@ -19,8 +19,9 @@ section#content img#center-image {
     margin: 100px auto;
 }
 
-div#demo-container{ width:50%; padding:15px; margin:0 auto; border:1px
-solid lightgray; border-radius:10px; }
+
+
+
 
 /********** footer **********/
 footer		{background-color:#f8f9fa; background-clip:content-box; clear:both; height:95px; text-align:center;}
