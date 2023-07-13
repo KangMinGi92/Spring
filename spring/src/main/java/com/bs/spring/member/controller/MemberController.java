@@ -107,6 +107,7 @@ public class MemberController {
 	public String updateMember(Member m,Model model) {
 		int result=service.updateMember(m);
 		Map map=Map.of("userId",m.getUserId());
+		map.put("userId", m.getUserId());
 		Member m2=service.selectMemberById(map);
 		if(result>0) {
 			model.addAttribute("loginMember", m2);
