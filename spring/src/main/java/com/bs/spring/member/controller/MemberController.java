@@ -65,6 +65,7 @@ public class MemberController {
 	
 	@PostMapping("/login.do")
 	public String login(@RequestParam Map param, Model model/* ,HttpSession session */) {
+		System.out.println(param);
 		Member m=service.selectMemberById(param);
 		//암호화된값을 비교하기 위해서는 BCrptPasswordEncoder가 제공하는 메소드를 이용해야한다.
 		//passwordEncoder.matches(파라미터로 전달된값,DB에 저장되있는 암호화된값);
@@ -101,5 +102,21 @@ public class MemberController {
 //	}
 	public String mypage() {
 		return "member/mypage";
+	}
+	@PostMapping("/update.do")
+	public String updateMember(Member m,Model model) {
+		int result=service.updateMember(m);
+		Map map=Map.of("userId",m.getUserId());
+		Member m2=service.selectMemberById(map);
+		if(result>0) {
+			model.addAttribute("loginMember", m2);
+			model.addAttribute("msg","정보변경되었습니다.");
+			model.addAttribute("loc","/member/mypage.do");
+		}
+		else {
+			model.addAttribute("msg","정보수정실패하셨습니다.");
+			model.addAttribute("loc","/");
+		}
+		return "common/msg";
 	}
 }

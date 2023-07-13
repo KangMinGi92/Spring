@@ -10,4 +10,6 @@ public interface MemberService {
 	int insertMember(Member m);
 	
 	Member selectMemberById(Map param);
+	
+	int updateMember(Member m);
 }

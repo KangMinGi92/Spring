@@ -20,4 +20,8 @@
 	<select id="selectMemberById" resultMap="memberMap" parameterType="map">
 		SELECT * FROM MEMBER WHERE USERID=#{userId}
 	</select>
+	<update id="updateMember" parameterType="member">
+		UPDATE MEMBER SET USERNAME=#{userName}, AGE=#{age}, EMAIL=#{email}, PHONE=#{phone}, ADDRESS=#{address}, GENDER=#{gender},
+		HOBBY=#{hobby, typeHandler=strArr}, ENROLLDATE=SYSDATE WHERE USERID=#{userId}
+	</update>
 </mapper>

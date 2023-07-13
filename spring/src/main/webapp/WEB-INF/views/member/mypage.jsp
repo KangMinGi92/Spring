@@ -12,10 +12,10 @@ div#enroll-container{width:400px; margin:0 auto; text-align:center;}
 div#enroll-container input, div#enroll-container select {margin-bottom:10px;}</style>
 <body>
 <div id="enroll-container">
-			<form name="memberEnrollFrm" action="" method="post">
+			<form name="memberUpdateFrm" action="${path}/member/update.do" method="post">
 				<input type="text" class="form-control" placeholder="아이디 (4글자이상)" name="userId" id="userId_" value="${loginMember.userId}" required readonly>
-				<input type="password" class="form-control" placeholder="비밀번호" name="password" id="password_" required>
-				<input type="password" class="form-control" placeholder="비밀번호확인" id="password2" required>
+				<input type="password" class="form-control" placeholder="비밀번호" name="password" id="password_">
+				<input type="password" class="form-control" placeholder="비밀번호확인" id="password2">
 				<input type="text" class="form-control" placeholder="이름" name="userName" id="userName" value="${loginMember.userName}">
 				<input type="number" class="form-control" placeholder="나이" name="age" id="age" value="${loginMember.age }">
 				<input type="email" class="form-control" placeholder="이메일" name="email" id="email" value="${loginMember.email }">

@@ -19,4 +19,9 @@ public class MemberDaoImpl implements MemberDao {
 	public Member selectMemberById(SqlSessionTemplate session, Map param) {
 		return session.selectOne("member.selectMemberById", param);
 	}
+	
+	@Override
+	public int updateMember(SqlSessionTemplate session, Member m) {
+		return session.update("member.updateMember",m);
+	}
 }
