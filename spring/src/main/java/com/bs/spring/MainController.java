@@ -31,17 +31,13 @@ public class MainController {
 		//객체에 설정된 prefix, suffix를 붙여서 내부에서 화면출력파일을 찾는다.
 		// /WEB-INF/views/리턴값.jsp
 		//RequestDispatcher("/WEB-INF/views/리턴값.jsp").forward
-		
-		
+
 		//쿠키추가하기
 		Cookie c=new Cookie("testData","cookiedata");
 		c.setMaxAge(60*60*24);
 		res.addCookie(c);
 		session.setAttribute("sessionId","admin");
-		
-		
-		
-		
+
 		//log4j를 이용해서 log출력하기
 		//slf4j에서 제공하는 logger인터페이스를 구현한 클래스를 이용함.
 		//LoggerFactory클래스에 static메소드인 getLogger(logger가져오는 클래스저장);
@@ -62,20 +58,7 @@ public class MainController {
 		logger.info("info내용출력하기");
 		logger.warn("warn내용출력하기");
 		logger.error("error내용출력하기");
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
 		return "index";
 				
 	}

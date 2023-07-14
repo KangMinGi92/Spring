@@ -18,6 +18,6 @@ public class Demo {
 	private String devEmail;
 	private String devGender;
 	private String[] devLang;
-	//private Date birthDay;
+//	private Date birthDay;
 	
 }

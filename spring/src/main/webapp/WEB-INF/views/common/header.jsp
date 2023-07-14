@@ -44,10 +44,16 @@
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav mr-auto">
 						<li class="nav-item active">
-							<a class="nav-link" href="">HOME</a>
+							<a class="nav-link" href="${path }">HOME</a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="${path}/demo/demo.do">ControllerTest</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="${path}/demo/selectDemoAll.do">DemoList</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="${path}/memo/selectMemoAll.do">Memo</a>
 						</li>
 					</ul>
 					<c:if test="${not empty loginMember }">

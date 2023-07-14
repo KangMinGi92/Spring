@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%
+	String str=null;
+	str.length();
+%>
 <c:set var="path" value="${pageContext.request.contextPath }" />
 <jsp:include page="/WEB-INF/views/common/header.jsp">
 	<jsp:param name="title" value="요청처리테스트" />
@@ -146,7 +150,7 @@ solid lightgray; border-radius:10px; }
 				<div class="col-sm-12">
 					<button type="button" class="col-sm-12 btn btn-outline-primary"
 						onclick="selectDemoAll('/demo/selectDemoAll.do')">
-						조회하기</button>
+						전체 조회하기</button>
 				</div>
 			</div>
 		</form>
@@ -154,7 +158,7 @@ solid lightgray; border-radius:10px; }
 </section>
 <script>
 	const selectDemoAll=(url)=>{
-		location.assign("${path}/"+url);
+		location.assign("${path}"+url);
 		
 	}
 	const isertDemo=()=>{

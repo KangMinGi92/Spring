@@ -23,11 +23,24 @@
 		</layout>
 	</appender>
 	
-	
-	
+	<!-- Sql문을 출력하는 logger등록하기 -->
+	<appender name="sqlLogger" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%-5p : %m%n"/>
+		</layout>
+	</appender>
+	<logger name="jdbc.sqlonly" additivity="false" >
+		<level value="info"/>
+		<appender-ref ref="sqlLogger"/>
+	</logger>
+	<logger name="jdbc.resultsettable" additivity="false" >
+		<level value="info"/>
+		<appender-ref ref="sqlLogger"/>
+	</logger>
 	
 	
 		<!-- Application Loggers -->
+		<!-- level value값의 종류 debug, info, warn, error, fatal 좌측으로 갈수록 넓은 범위이다 -->
 	<logger name="com.bs.spring">
 		<level value="debug" />
 		<!--해당 로그에만 적용시키고싶으면 해당 로그에 appender-ref로 추가  -->

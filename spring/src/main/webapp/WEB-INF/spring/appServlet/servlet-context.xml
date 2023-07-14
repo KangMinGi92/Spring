@@ -91,4 +91,29 @@
 	<!--다른 xml파일을 참조해올수 있다.-->
 	<!-- <beans:import resource=""/> -->
 	
+	<!-- 인터셉터등록하기 -->
+	<interceptors>
+		<interceptor>
+			<mapping path="/demo/*"/>
+			<!-- <exclude-mapping path="/demo/demo.do"/> -->
+			<beans:bean class="com.bs.spring.common.interceptor.LoggerInterceptor"/>
+		</interceptor>
+		<interceptor>
+			<mapping path="/demo/selectDemoAll.do"/>
+			<beans:ref bean="loginCheck"/>
+		</interceptor>
+<!-- 		<interceptor>
+			<mapping path="/memo/*"/>
+			<beans:ref bean="loginCheck"/>
+		</interceptor>
+		<interceptor>
+			<mapping path="/memo/*"/>
+			<beans:ref bean="adminCheck"/>
+		</interceptor> -->
+	</interceptors>
+	
+	<beans:bean id="loginCheck" class="com.bs.spring.common.interceptor.LoginCheckInterceptor"/>
+	<beans:bean id="adminCheck" class="com.bs.spring.common.interceptor.AdminCheckInterceptor"/>
+	
+	
 </beans:beans>

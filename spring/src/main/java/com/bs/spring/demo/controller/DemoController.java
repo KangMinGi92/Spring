@@ -260,10 +260,10 @@ public class DemoController {
 	}
 	
 	@RequestMapping("/demo/selectDemoAll.do")
-	public String selectDemoAll(Model m) {
+	public String selectDemoAll(Model m){
 		List<Demo> demos=service.selectDemoAll();
-		System.out.println(demos);
 		m.addAttribute("demos", demos);
+		demos.forEach(System.out::println);
 		return "demo/demoList";
 	}
 	

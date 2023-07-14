@@ -1,5 +1,6 @@
 package com.bs.spring.member.controller;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -106,7 +107,8 @@ public class MemberController {
 	@PostMapping("/update.do")
 	public String updateMember(Member m,Model model) {
 		int result=service.updateMember(m);
-		Map map=Map.of("userId",m.getUserId());
+		Map map=new HashMap();
+//		Map.of("userId",m.getUserId());
 		map.put("userId", m.getUserId());
 		Member m2=service.selectMemberById(map);
 		if(result>0) {
