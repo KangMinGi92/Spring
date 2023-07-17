@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,13 +34,18 @@ public class MemberController {
 	private BCryptPasswordEncoder passwordEncoder;
 	
 	@RequestMapping("/enrollMember.do")
-	public String enrollMember() {
+	public String enrollMember(@ModelAttribute("member") Member m) {
+		//페이지전환
 		return "member/enrollMember"; 
 	}
 	
 	//@RequestMapping(value="/member/insertMember.do",method=RequestMethod.POST)
 	@PostMapping("/insertMember.do")
-	public String insertMember(Member m, Model model) {
+	public String insertMember(@Validated Member m,BindingResult isResult, Model model) {
+		
+		if(isResult.hasErrors()) {
+			return "member/enrollMember";
+		}else {
 		
 		//패스워드를 암호화해서 처리하자.
 		String oriPassword=m.getPassword();
@@ -62,6 +70,7 @@ public class MemberController {
 		model.addAttribute("loc",loc);
 		//return "redirect:/";
 		return "common/msg";
+		}
 	}
 	
 	@PostMapping("/login.do")
@@ -93,6 +102,9 @@ public class MemberController {
 	//@SessionAttribute로 등록된 내용삭제하기
 	//SessionStatus객체를 이용해서 삭제
 	public String logout(SessionStatus status) {
+		
+		//if(l==1) throw new IllegalArgumentException("잘못된 접근입니다.!");
+		//error메세지를 확인하기 위해 강제로 에러 띄워주기 위한 구문
 		if(!status.isComplete()) status.setComplete();
 		return "redirect:/";
 	}

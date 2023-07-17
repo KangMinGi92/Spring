@@ -33,7 +33,7 @@
 				<h2>${param.title}</h2>
 			</div>
 			<nav class="navbar navbar-expand-lg navbar-light bg-light">
-				<a class="navbar-brand" href="#"> <img alt="로고"
+				<a class="navbar-brand" href="${path }"> <img alt="로고"
 					src="${path}/resources/images/logo-spring.png" width="50px">
 				</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -54,6 +54,9 @@
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="${path}/memo/selectMemoAll.do">Memo</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="${path}/board/boardList.do">게시판</a>
 						</li>
 					</ul>
 					<c:if test="${not empty loginMember }">

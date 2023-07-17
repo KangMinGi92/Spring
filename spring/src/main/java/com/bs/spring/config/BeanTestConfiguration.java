@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
 import org.springframework.context.annotation.Import;
 import org.springframework.core.annotation.Order;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import com.bs.spring.beantest.Animal;
 import com.bs.spring.beantest.Department;
@@ -17,6 +18,7 @@ import com.bs.spring.beantest.Employee;
 // pojo클래스를 configuration으로 사용할 수 있음 -> @Configuration어노테이션 이용
 
 @Configuration
+@EnableWebMvc
 @ComponentScan(basePackages="com.bs.spring",
 		includeFilters= {@ComponentScan.Filter(type= FilterType.REGEX,pattern= {"com.bs.spring.include.*"})},
 		//어노테이션 표시가 없더라도 해당이 되면 bean으로 등록함
