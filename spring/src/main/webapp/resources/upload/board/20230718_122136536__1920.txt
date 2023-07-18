@@ -1,0 +1,23 @@
+spring에서 트랜잭션 처리하기
+
+spring이 제공하는 TransactionManger클래스를 이용해서 처리
+ -> Session이 종료되면 기본적으로 실행한 DML구문 commit();
+ -> SQL문 실행 중 RuntimeException이 발생하면 rollback();이 된다.(설정에 따라 Exception을 정할 수 있다.)
+	*SQLException도 RuntimeException중에 하나
+
+트랜잭션을 설정하는 방법
+1. xml방식
+ <tx:config>태그로 트랜잭션 관련 설정
+ <aop:config>태그를 이용하여 트랜잭션적용
+		
+2.어노테이션 방식
+ @Transactional을 메소드 선언부에 선언을 함.
+ <aop:aspectj-autoproxy/>가 반드시 설정이 되어있어야한다.!!
+
+트랜잭션 옵션
+ 1. propagation : 트랜잭션을 생성하는 방법에 대한 설정 (default 이미 시작된 값이 있으면 참여, 없으면 트랜잭션을 생성)
+ 2. isolation : 트랜잭션의 수정내용을 다른 트랜잭션에서 사용여부 설정
+ 3. timeout : 
+ 4. read-only : select문을 사용할때 사용 읽기전용
+ 5. rollback-for또는 rollbackfor : rollback의 기준을 재설정
+ 6. no-rollback-for : 

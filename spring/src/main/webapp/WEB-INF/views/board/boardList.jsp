@@ -8,7 +8,7 @@
 <section>
 <section id="board-container" class="container">
         <p>총 ${totalContents }건의 게시물이 있습니다.</p>
-        <button class="btn btn-outline-success" onclick="location.assign('${path}/board/insertBoardpage.do')">글쓰기</button>
+        <button class="btn btn-outline-success" onclick="location.assign('${path}/board/boardForm.do')">글쓰기</button>
         <table id="tbl-board" class="table table-striped table-hover">
             <tr>
                 <th>번호</th>
@@ -19,13 +19,18 @@
                 <th>조회수</th>
             </tr>
             <c:if test="${not empty boards}">
-	            <c:forEach var="b" items="${boards}">
+	            <c:forEach var="b" items="${boards}" >
 		            <tr>
 		            	<td><c:out value="${b.boardNo }"/></td>
 		            	<td><a href="${path }/board/boardView.do?no=${b.boardNo}"><c:out value="${b.boardTitle }"/></a></td>
-		            	<td><c:out value="${b.boardWriter }"/></td>
+		            	<td><c:out value="${b.boardWriter.userId }"/></td>
 		            	<td><fmt:formatDate value="${b.boardDate }" pattern="yyyy-MM-dd" /></td>
-		            	<td>첨부파일</td>
+		            	<td>
+		            		<c:if test="${not empty b.file }">
+		            			<img src="${path }/resources/images/file.png" alt="첨부파일사진">
+		            			<span>${b.file.size() }</span>
+		            		</c:if>
+		            	</td>
 		            	<td><c:out value="${b.boardReadCount }"/></td>
 		            </tr>
 	            </c:forEach>

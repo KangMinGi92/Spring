@@ -24,14 +24,23 @@ div#board-container label.custom-file-label {
 </style>
 <section>
 	<div id="board-container">
-		<input type="text" class="form-control" placeholder="제목" 
-		name="boardTitle" id="boardTitle" value="${board.boardTitle }" required> 
-		<input type="text" class="form-control" name="boardWriter" 
-		value="${board.boardWriter }" readonly required>
-		<button type="button" class="btn btn-outline-success btn-block" onclick=""></button>
+		<input type="text" class="form-control" placeholder="제목" name="boardTitle" id="boardTitle" value="${board.boardTitle }" required> 
+		<input type="text" class="form-control" name="boardWriter" value="${board.boardWriter.userId }" readonly required>
+		<c:if test="${not empty board.file }">
+			<c:forEach var="f" items="${board.file }">
+				<button type="button" class="btn btn-outline-success btn-block" 
+				onclick="fn_fileDownload('${f.originalFilename}','${f.renamedFilename }');">
+					${f.originalFilename}
+				</button>
+			</c:forEach>
+		</c:if>
 		<textarea class="form-control" name="boardContent" placeholder="내용" 
 			required>${board.boardContent }</textarea>
 	</div>
-
+<script>
+	function fn_fileDownload(oriName,reName){
+		location.assign("${path}/board/filedownload?oriname="+oriName+"&rename="+reName);
+	}
+</script>
 </section>
 <jsp:include page="/WEB-INF/views/common/footer.jsp" />

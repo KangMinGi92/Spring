@@ -38,4 +38,33 @@
 		<constructor-arg index="0" ref="sessionFactory"/>
 	</bean>
 
+	<!-- 
+		
+		트랜잭션 설정하기
+		DataSourceTransactionManager클래스를 bean으로 등록
+		1. 어노테이션방식으로 설정하기
+		<tx:annotaion-driven>태그를 설정
+	 -->
+	 <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	 	<property name="dataSource" ref="proxyDataSource"/>
+	 </bean>
+	<!--  <tx:annotation-driven transaction-manager="transactionManager"/> -->
+	<!-- 
+		2. xml방식으로 선언하기
+	 -->
+	 <tx:advice id="txadvice" transaction-manager="transactionManager">
+	 	<tx:attributes>
+	 		<tx:method name="insert*" />
+	 	</tx:attributes>
+	 </tx:advice>
+	 
+	 <aop:config>
+	 	<aop:pointcut expression="within(com.bs.spring..*ServiceImpl)" id="transpo"/>
+	 	<aop:advisor advice-ref="txadvice" pointcut-ref="transpo"/>
+	 </aop:config>
+	
+	
+	
+
+
 </beans>
