@@ -60,6 +60,7 @@ public class MainController {
 		logger.error("error내용출력하기");
 	
 		return "index";
-				
+		
+		//return "redirect:index.html";
 	}
 }

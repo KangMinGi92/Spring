@@ -1,5 +1,6 @@
 package com.bs.spring.member.service;
 
+import java.util.List;
 import java.util.Map;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -31,5 +32,10 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int updateMember(Member m) {
 		return dao.updateMember(session,m);
+	}
+	
+	@Override
+	public List<Member> selectMemberAll(){
+		return dao.selectMemberAll(session);
 	}
 }
