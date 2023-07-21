@@ -15,3 +15,30 @@ spring:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
+#fileUpload 처리 설정하기
+  servlet:
+    multipart:
+      max-file-size: 10MB
+        
+
+
+#mybatis 설정하기
+#mybatis:
+#  mapper-locations: classpath:/mappers/**/*.xml
+#  config-location: classpath:/config/mybatis-config.xml
+  
+#log설정하기
+logging:
+  file: 
+    name: logs/springboot.log
+  level:
+    '[com.bs.helloboot]': debug
+    
+linux:
+  url: http://14.36.141.71
+  port: 9994
+  baseDir: /home/bsyoo
+  
+
+
+  
