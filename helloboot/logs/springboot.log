@@ -5433,3 +5433,221 @@ Caused by: java.io.FileNotFoundException: class path resource [org/springframewo
 2023-07-21 14:41:00.394  INFO 15744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
 2023-07-21 14:41:00.397  INFO 15744 --- [restartedMain] com.bs.helloboot.HellobootApplication    : Started HellobootApplication in 0.586 seconds (JVM running for 368.812)
 2023-07-21 14:41:00.399  INFO 15744 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-07-21 15:07:26.998  INFO 15744 --- [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-07-21 15:07:26.998  INFO 15744 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-07-21 15:07:26.999  INFO 15744 --- [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-07-21 15:07:26.999 DEBUG 15744 --- [http-nio-9090-exec-1] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:07:26.999 DEBUG 15744 --- [http-nio-9090-exec-1] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.TestFilter doFilter
+2023-07-21 15:07:26.999 DEBUG 15744 --- [http-nio-9090-exec-1] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:07:27.000 DEBUG 15744 --- [http-nio-9090-exec-1] com.bs.helloboot.TestFilter              : 필터가 적용되었다.!=======
+2023-07-21 15:07:31.323 DEBUG 15744 --- [http-nio-9090-exec-2] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:07:31.323 DEBUG 15744 --- [http-nio-9090-exec-2] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.TestFilter doFilter
+2023-07-21 15:07:31.323 DEBUG 15744 --- [http-nio-9090-exec-2] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:07:31.323 DEBUG 15744 --- [http-nio-9090-exec-2] com.bs.helloboot.TestFilter              : 필터가 적용되었다.!=======
+2023-07-21 15:07:31.338 DEBUG 15744 --- [http-nio-9090-exec-2] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:07:31.338 DEBUG 15744 --- [http-nio-9090-exec-2] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.controller.BasicController selectMemberByName
+2023-07-21 15:07:31.338 DEBUG 15744 --- [http-nio-9090-exec-2] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:07:31.340 DEBUG 15744 --- [http-nio-9090-exec-2] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:07:31.340 DEBUG 15744 --- [http-nio-9090-exec-2] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.service.MemberServiceImpl selectMemberByName
+2023-07-21 15:07:31.340 DEBUG 15744 --- [http-nio-9090-exec-2] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:07:31.341 DEBUG 15744 --- [http-nio-9090-exec-2] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:07:31.342 DEBUG 15744 --- [http-nio-9090-exec-2] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.dao.MemberDaoImpl selectMemberByName
+2023-07-21 15:07:31.342 DEBUG 15744 --- [http-nio-9090-exec-2] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:07:31.344 DEBUG 15744 --- [http-nio-9090-exec-2] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:07:31.344 DEBUG 15744 --- [http-nio-9090-exec-2] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.common.mapper.MemberMapper selectMemberByName
+2023-07-21 15:07:31.344 DEBUG 15744 --- [http-nio-9090-exec-2] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:07:31.360 DEBUG 15744 --- [http-nio-9090-exec-2] c.b.h.c.m.M.selectMemberByName           : ==>  Preparing: SELECT * FROM MEMBER WHERE (USERNAME LIKE '%'||?||'%')
+2023-07-21 15:07:31.433 DEBUG 15744 --- [http-nio-9090-exec-2] c.b.h.c.m.M.selectMemberByName           : ==> Parameters: 암호화(String)
+2023-07-21 15:07:31.512 DEBUG 15744 --- [http-nio-9090-exec-2] c.b.h.c.m.M.selectMemberByName           : <==      Total: 3
+2023-07-21 15:12:04.172  INFO 15744 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2023-07-21 15:12:04.180  INFO 15744 --- [Thread-15] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-07-21 15:12:04.181  INFO 15744 --- [Thread-15] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-07-21 15:12:04.184  INFO 15744 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2023-07-21 15:12:04.189  INFO 15744 --- [Thread-15] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+2023-07-21 15:12:04.244  INFO 15744 --- [restartedMain] com.bs.helloboot.HellobootApplication    : Starting HellobootApplication using Java 17.0.3 on DESKTOP-PTOTHGS with PID 15744 (C:\Users\GDJ\git\Spring\helloboot\target\classes started by GDJ in C:\Users\GDJ\git\Spring\helloboot)
+2023-07-21 15:12:04.244 DEBUG 15744 --- [restartedMain] com.bs.helloboot.HellobootApplication    : Running with Spring Boot v2.7.14-SNAPSHOT, Spring v5.3.29
+2023-07-21 15:12:04.244  INFO 15744 --- [restartedMain] com.bs.helloboot.HellobootApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-07-21 15:12:04.352  INFO 15744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-07-21 15:12:04.357  INFO 15744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JDBC repository interfaces.
+2023-07-21 15:12:04.428  INFO 15744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-07-21 15:12:04.429  INFO 15744 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-21 15:12:04.429  INFO 15744 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-07-21 15:12:04.486  INFO 15744 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-07-21 15:12:04.487  INFO 15744 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-21 15:12:04.487  INFO 15744 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 241 ms
+2023-07-21 15:12:04.541 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:12:04.542 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.config.MyWebMvcConfiguration registerWebSocketHandlers
+2023-07-21 15:12:04.542 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:12:04.624  INFO 15744 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-07-21 15:12:04.624 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:12:04.625 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.config.MyWebMvcConfiguration addInterceptors
+2023-07-21 15:12:04.625 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:12:04.625 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:12:04.625 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.config.MyWebMvcConfiguration addCorsMappings
+2023-07-21 15:12:04.625 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:12:04.639 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:12:04.639 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.config.MyWebMvcConfiguration addViewControllers
+2023-07-21 15:12:04.639 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:12:04.688  INFO 15744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2023-07-21 15:12:04.728  INFO 15744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2023-07-21 15:12:04.756  INFO 15744 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-07-21 15:12:04.765  INFO 15744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-07-21 15:12:04.769  INFO 15744 --- [restartedMain] com.bs.helloboot.HellobootApplication    : Started HellobootApplication in 0.547 seconds (JVM running for 2233.184)
+2023-07-21 15:12:04.772  INFO 15744 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-07-21 15:12:09.237  INFO 15744 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2023-07-21 15:12:09.249  INFO 15744 --- [Thread-21] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-07-21 15:12:09.252  INFO 15744 --- [Thread-21] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2023-07-21 15:12:09.257  INFO 15744 --- [Thread-21] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+2023-07-21 15:12:09.316  INFO 15744 --- [restartedMain] com.bs.helloboot.HellobootApplication    : Starting HellobootApplication using Java 17.0.3 on DESKTOP-PTOTHGS with PID 15744 (C:\Users\GDJ\git\Spring\helloboot\target\classes started by GDJ in C:\Users\GDJ\git\Spring\helloboot)
+2023-07-21 15:12:09.316 DEBUG 15744 --- [restartedMain] com.bs.helloboot.HellobootApplication    : Running with Spring Boot v2.7.14-SNAPSHOT, Spring v5.3.29
+2023-07-21 15:12:09.317  INFO 15744 --- [restartedMain] com.bs.helloboot.HellobootApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-07-21 15:12:09.416  INFO 15744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-07-21 15:12:09.421  INFO 15744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JDBC repository interfaces.
+2023-07-21 15:12:09.481  INFO 15744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-07-21 15:12:09.481  INFO 15744 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-21 15:12:09.481  INFO 15744 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-07-21 15:12:09.534  INFO 15744 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-07-21 15:12:09.536  INFO 15744 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-21 15:12:09.536  INFO 15744 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 218 ms
+2023-07-21 15:12:09.587 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:12:09.588 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.config.MyWebMvcConfiguration registerWebSocketHandlers
+2023-07-21 15:12:09.588 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:12:09.661  INFO 15744 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-07-21 15:12:09.661 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:12:09.661 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.config.MyWebMvcConfiguration addInterceptors
+2023-07-21 15:12:09.661 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:12:09.662 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:12:09.662 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.config.MyWebMvcConfiguration addCorsMappings
+2023-07-21 15:12:09.662 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:12:09.674 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:12:09.674 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.config.MyWebMvcConfiguration addViewControllers
+2023-07-21 15:12:09.674 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:12:09.718  INFO 15744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2023-07-21 15:12:09.758  INFO 15744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2023-07-21 15:12:09.785  INFO 15744 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-07-21 15:12:09.793  INFO 15744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-07-21 15:12:09.797  INFO 15744 --- [restartedMain] com.bs.helloboot.HellobootApplication    : Started HellobootApplication in 0.5 seconds (JVM running for 2238.212)
+2023-07-21 15:12:09.798  INFO 15744 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-07-21 15:12:41.708  INFO 15744 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (1 addition, 0 deletions, 0 modifications)
+2023-07-21 15:12:41.720  INFO 15744 --- [Thread-26] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-07-21 15:12:41.723  INFO 15744 --- [Thread-26] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2023-07-21 15:12:41.728  INFO 15744 --- [Thread-26] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+2023-07-21 15:12:41.776  INFO 15744 --- [restartedMain] com.bs.helloboot.HellobootApplication    : Starting HellobootApplication using Java 17.0.3 on DESKTOP-PTOTHGS with PID 15744 (C:\Users\GDJ\git\Spring\helloboot\target\classes started by GDJ in C:\Users\GDJ\git\Spring\helloboot)
+2023-07-21 15:12:41.777 DEBUG 15744 --- [restartedMain] com.bs.helloboot.HellobootApplication    : Running with Spring Boot v2.7.14-SNAPSHOT, Spring v5.3.29
+2023-07-21 15:12:41.777  INFO 15744 --- [restartedMain] com.bs.helloboot.HellobootApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-07-21 15:12:41.881  INFO 15744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-07-21 15:12:41.885  INFO 15744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JDBC repository interfaces.
+2023-07-21 15:12:41.947  INFO 15744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-07-21 15:12:41.947  INFO 15744 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-21 15:12:41.947  INFO 15744 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-07-21 15:12:41.996  INFO 15744 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-07-21 15:12:41.998  INFO 15744 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-21 15:12:41.998  INFO 15744 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 220 ms
+2023-07-21 15:12:42.054 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:12:42.054 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.config.MyWebMvcConfiguration registerWebSocketHandlers
+2023-07-21 15:12:42.054 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:12:42.126  INFO 15744 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-07-21 15:12:42.126 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:12:42.126 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.config.MyWebMvcConfiguration addInterceptors
+2023-07-21 15:12:42.126 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:12:42.127 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:12:42.127 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.config.MyWebMvcConfiguration addCorsMappings
+2023-07-21 15:12:42.127 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:12:42.139 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:12:42.139 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.config.MyWebMvcConfiguration addViewControllers
+2023-07-21 15:12:42.139 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:12:42.188  INFO 15744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2023-07-21 15:12:42.233  INFO 15744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2023-07-21 15:12:42.259  INFO 15744 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-07-21 15:12:42.267  INFO 15744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-07-21 15:12:42.270  INFO 15744 --- [restartedMain] com.bs.helloboot.HellobootApplication    : Started HellobootApplication in 0.512 seconds (JVM running for 2270.685)
+2023-07-21 15:12:42.271  INFO 15744 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-07-21 15:15:53.116  INFO 15744 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 1 class path change (0 additions, 1 deletion, 0 modifications)
+2023-07-21 15:15:53.130  INFO 15744 --- [Thread-31] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-07-21 15:15:53.134  INFO 15744 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown initiated...
+2023-07-21 15:15:53.139  INFO 15744 --- [Thread-31] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Shutdown completed.
+2023-07-21 15:15:53.187  INFO 15744 --- [restartedMain] com.bs.helloboot.HellobootApplication    : Starting HellobootApplication using Java 17.0.3 on DESKTOP-PTOTHGS with PID 15744 (C:\Users\GDJ\git\Spring\helloboot\target\classes started by GDJ in C:\Users\GDJ\git\Spring\helloboot)
+2023-07-21 15:15:53.187 DEBUG 15744 --- [restartedMain] com.bs.helloboot.HellobootApplication    : Running with Spring Boot v2.7.14-SNAPSHOT, Spring v5.3.29
+2023-07-21 15:15:53.187  INFO 15744 --- [restartedMain] com.bs.helloboot.HellobootApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-07-21 15:15:53.287  INFO 15744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-07-21 15:15:53.291  INFO 15744 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 4 ms. Found 0 JDBC repository interfaces.
+2023-07-21 15:15:53.352  INFO 15744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-07-21 15:15:53.352  INFO 15744 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-21 15:15:53.353  INFO 15744 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-07-21 15:15:53.401  INFO 15744 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-07-21 15:15:53.405  INFO 15744 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-21 15:15:53.405  INFO 15744 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 217 ms
+2023-07-21 15:15:53.457 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:15:53.457 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.config.MyWebMvcConfiguration registerWebSocketHandlers
+2023-07-21 15:15:53.457 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:15:53.529  INFO 15744 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-07-21 15:15:53.529 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:15:53.529 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.config.MyWebMvcConfiguration addInterceptors
+2023-07-21 15:15:53.529 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:15:53.529 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:15:53.530 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.config.MyWebMvcConfiguration addCorsMappings
+2023-07-21 15:15:53.530 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:15:53.543 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 15:15:53.543 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.config.MyWebMvcConfiguration addViewControllers
+2023-07-21 15:15:53.543 DEBUG 15744 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 15:15:53.590  INFO 15744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Starting...
+2023-07-21 15:15:53.684  INFO 15744 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Start completed.
+2023-07-21 15:15:53.709  INFO 15744 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-07-21 15:15:53.717  INFO 15744 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9090 (http) with context path ''
+2023-07-21 15:15:53.721  INFO 15744 --- [restartedMain] com.bs.helloboot.HellobootApplication    : Started HellobootApplication in 0.552 seconds (JVM running for 2462.136)
+2023-07-21 15:15:53.722  INFO 15744 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-07-21 15:21:06.690  INFO 15744 --- [RMI TCP Connection(70)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2023-07-21 15:21:06.702  INFO 15744 --- [RMI TCP Connection(70)-127.0.0.1] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-07-21 15:21:06.709  INFO 15744 --- [RMI TCP Connection(70)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown initiated...
+2023-07-21 15:21:06.714  INFO 15744 --- [RMI TCP Connection(70)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-7 - Shutdown completed.
+2023-07-21 16:16:03.881  INFO 10552 --- [restartedMain] com.bs.helloboot.HellobootApplication    : Starting HellobootApplication using Java 17.0.3 on DESKTOP-PTOTHGS with PID 10552 (C:\Users\GDJ\git\Spring\helloboot\target\classes started by GDJ in C:\Users\GDJ\git\Spring\helloboot)
+2023-07-21 16:16:03.882 DEBUG 10552 --- [restartedMain] com.bs.helloboot.HellobootApplication    : Running with Spring Boot v2.7.14-SNAPSHOT, Spring v5.3.29
+2023-07-21 16:16:03.882  INFO 10552 --- [restartedMain] com.bs.helloboot.HellobootApplication    : No active profile set, falling back to 1 default profile: "default"
+2023-07-21 16:16:03.918  INFO 10552 --- [restartedMain] o.s.b.devtools.restart.ChangeableUrls    : The Class-Path manifest attribute in C:\Users\GDJ\.m2\repository\com\oracle\database\jdbc\ojdbc8\21.5.0.0\ojdbc8-21.5.0.0.jar referenced one or more files that do not exist: file:/C:/Users/GDJ/.m2/repository/com/oracle/database/jdbc/ojdbc8/21.5.0.0/oraclepki.jar
+2023-07-21 16:16:03.918  INFO 10552 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-07-21 16:16:03.918  INFO 10552 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-07-21 16:16:04.322  INFO 10552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2023-07-21 16:16:04.334  INFO 10552 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 JDBC repository interfaces.
+2023-07-21 16:16:04.855  INFO 10552 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9090 (http)
+2023-07-21 16:16:04.862  INFO 10552 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-07-21 16:16:04.862  INFO 10552 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.78]
+2023-07-21 16:16:05.013  INFO 10552 --- [restartedMain] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2023-07-21 16:16:05.021  INFO 10552 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-07-21 16:16:05.021  INFO 10552 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1103 ms
+2023-07-21 16:16:05.240 DEBUG 10552 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 16:16:05.241 DEBUG 10552 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.config.MyWebMvcConfiguration registerWebSocketHandlers
+2023-07-21 16:16:05.241 DEBUG 10552 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 16:16:05.445  INFO 10552 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2023-07-21 16:16:05.446 DEBUG 10552 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 16:16:05.447 DEBUG 10552 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.config.MyWebMvcConfiguration addInterceptors
+2023-07-21 16:16:05.447 DEBUG 10552 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 16:16:05.454 DEBUG 10552 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 16:16:05.454 DEBUG 10552 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.config.MyWebMvcConfiguration addCorsMappings
+2023-07-21 16:16:05.454 DEBUG 10552 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 16:16:05.490 DEBUG 10552 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ===== aop before =====
+2023-07-21 16:16:05.490 DEBUG 10552 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : com.bs.helloboot.config.MyWebMvcConfiguration addViewControllers
+2023-07-21 16:16:05.490 DEBUG 10552 --- [restartedMain] com.bs.helloboot.common.aop.LoggerAop    : ======================
+2023-07-21 16:16:05.591  INFO 10552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-07-21 16:16:05.854  INFO 10552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-07-21 16:16:05.958  WARN 10552 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2023-07-21 16:16:05.974  WARN 10552 --- [restartedMain] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'; nested exception is org.springframework.boot.web.server.PortInUseException: Port 9090 is already in use
+2023-07-21 16:16:05.978  INFO 10552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-07-21 16:16:06.003  INFO 10552 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-07-21 16:16:06.006  INFO 10552 --- [restartedMain] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-07-21 16:16:06.015  INFO 10552 --- [restartedMain] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2023-07-21 16:16:06.029 ERROR 10552 --- [restartedMain] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 9090 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 9090 or configure this application to listen on another port.
+
