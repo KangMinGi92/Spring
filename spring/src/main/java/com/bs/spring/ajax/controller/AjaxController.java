@@ -81,6 +81,15 @@ public class AjaxController {
 		log.info("{}",m);
 		return m;
 	}
+	@GetMapping("/logintest")
+	public String logintest() {
+		return "test/login";
+	}
+	
+	@GetMapping("/logintest2")
+	public String logintest2() {
+		return "test/firstlogin";
+	}
 	
 	//REST API, RESTFul -> session,Cookie관리를 안해!(stateless)
 	//URL을 설정할때 간편하게 서비스를 알아볼 수 있는 방식으로 구현하자

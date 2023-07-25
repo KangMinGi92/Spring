@@ -1,10 +1,16 @@
 package com.bs.helloboot.config;
 
+import java.util.Properties;
+
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.handler.SimpleMappingExceptionResolver;
 import org.springframework.web.socket.config.annotation.EnableWebSocket;
 import org.springframework.web.socket.config.annotation.WebSocketConfigurer;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
@@ -54,7 +60,18 @@ public class MyWebMvcConfiguration implements WebMvcConfigurer,WebSocketConfigur
 		registry.addMapping("/**").allowedOrigins("http://localhost:3000");
 	}
 	
-	
+	//HandlerExceptionResolver를 이용해서 spring에서 발생하는 에러 처리하기 -> webmvc모듈에서 제공
+	@Bean
+	public HandlerExceptionResolver handleExceptionResolver() {
+		Properties exceptionProp=new Properties();
+		exceptionProp.setProperty(IllegalAccessException.class.getName(), "error/accessException");
+		
+		SimpleMappingExceptionResolver resolver=new SimpleMappingExceptionResolver();
+		resolver.setExceptionMappings(exceptionProp);
+		resolver.setDefaultErrorView("error/error");
+		
+		return resolver;
+	}
 	
 	
 }

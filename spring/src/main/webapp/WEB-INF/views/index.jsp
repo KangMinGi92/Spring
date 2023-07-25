@@ -15,9 +15,16 @@
 	<h4><button class="btn btn-outline-danger" onclick="selectMemberAll();">전체회원 가져오기</button></h4>
 	<h4><button class="btn btn-outline-dark" onclick="insertData();">데이터 저장하기</button></h4>
 	<div id="ajaxContainer"></div>
-	
+	<h4><button class="btn btn-outline-dark" onclick="login();">로그인 테스트하기</button></h4>
+	<h4><button class="btn btn-outline-dark" onclick="login2();">first로그인 테스트하기</button></h4>
 	
 	<script>
+		const login=()=>{
+			location.assign('${path}/ajax/logintest');
+		}
+		const login2=()=>{
+			location.assign('${path}/ajax/logintest2');
+		}
 		const basicAjax=()=>{
 			$.get('${path}/ajax/basicTest.do',(data)=>{
 				console.log(data);

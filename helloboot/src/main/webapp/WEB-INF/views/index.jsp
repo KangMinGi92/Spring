@@ -39,6 +39,24 @@
 			open("/chattingpage","_blank","width=400, height=500");
 		}
 	</script>
-	
+	<h3>ajax요청처리하기</h3>
+	<button onclick="memberAll();">요청처리하기</button>
+	<script>
+	const memberAll=()=>{
+		fetch("${pageContext.request.contextPath}/ajax/memberAll")
+			.then(response=>{
+					if(!response.ok) 
+						throw new Error("요청에러"); 
+					return response.json();
+				}
+			)
+			.then(data=>{
+				console.log(data);
+			})
+			.catch(error=>{
+				console.log(error);
+			});
+		}
+	</script>
 </body>
 </html>
