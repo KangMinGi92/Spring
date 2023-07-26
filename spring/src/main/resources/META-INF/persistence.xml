@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+	<!-- 연결할 DB와 hibernate동작에 대한 설정 -->
+	<persistence-unit name="bstest">
+		<properties>
+			<!-- DB연결에 대한 설정 -->
+			<property name="javax.persistence.jdbc.driver" value="oracle.jdbc.driver.OracleDriver"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
+			<property name="javax.persistence.jdbc.user" value="spring"/>
+			<property name="javax.persistence.jdbc.password" value="spring"/>
+			
+			<!-- DB방언설정 -->
+			<property name="hibernate.dialect" value="org.hibernate.dialect.Oracle10gDialect"/>
+			<!-- hibernate 출력 log에 대한 설정 -->
+			<property name="hibernate.show_sql" value="true"/>
+			<!-- 출력 log에 대한 포멧 설정 (필수는 아니고 sql문이 1열로 표시되면 보기 힘드니 설정해줌) -->
+			<property name="hibernate.format_sql" value="true"/>
+			
+			<!-- DDL자동실행관려 옵션설정 
+				value="" 옵션 종류 
+				create(추가),create-drop(전체 삭제후 추가), update(변경사항저장), validate, none
+			-->
+			<property name="hibernate.hbm2ddl.auto" value="update"/>
+		</properties>
+	</persistence-unit>
+</persistence>
+

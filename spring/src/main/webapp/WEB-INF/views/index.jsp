@@ -126,5 +126,11 @@
 			
 		}
 	</script>
+	
+	<h1>JPA테스트</h1>
+	<h3><a href="${pageContext.request.contextPath }/jpa/basicTest.do">기본 EntityManger이용하기</a></h3>
+	
+	
+	
 </section>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
