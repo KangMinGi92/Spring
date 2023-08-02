@@ -130,6 +130,33 @@
 	<h1>JPA테스트</h1>
 	<h3><a href="${pageContext.request.contextPath }/jpa/basicTest.do">기본 EntityManger이용하기</a></h3>
 	
+	<h3>
+		<a href="${pageContext.request.contextPath }/jpa/manytoone.do">
+			ManyToOne단방향 관계구현
+		</a>
+	</h3>
+	<h3>
+		<a href="${pageContext.request.contextPath }/jpa/onetoone.do">
+			OneToOne단방향 관계구현
+		</a>
+	</h3>
+	<h3>
+		<a href="${pageContext.request.contextPath }/jpa/entitydelete.do?no=1">
+			student 삭제하기
+		</a>
+	</h3>
+	
+	<h3>entity수정하기</h3>
+		<form action="${path }/jpa/updatestudent.do" method="post">
+			학생번호<input type="text" name="no"><br>
+			학생이름<input type="text" name="name"><br>
+			학생학년<input type="text" name="grade"><br>
+			<input type="submit" value="변경">
+		</form>
+	
+	<h3>
+		<a href="${path }/jpa/insertClub.do">다대다 테스트</a>
+	</h3>
 	
 	
 </section>

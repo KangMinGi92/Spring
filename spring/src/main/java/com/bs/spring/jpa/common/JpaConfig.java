@@ -25,8 +25,8 @@ public class JpaConfig {
 		return factory;
 	}
 	
-	@Bean
-	public EntityManager entityManger() {
-		return entityManagerFactory().createEntityManager();
-	}
+//	@Bean
+//	public EntityManager entityManger() {
+//		return entityManagerFactory().createEntityManager();
+//	}
 }

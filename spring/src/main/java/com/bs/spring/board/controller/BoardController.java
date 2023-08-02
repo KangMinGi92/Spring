@@ -51,7 +51,7 @@ public class BoardController {
 		int totalData=service.selectBoardAllCount();
 		//paging
 		m.addAttribute("pageBar",PageFactory.getPage(cPage, numPerpage, totalData,"boardList.do"));
-		m.addAttribute("totalContents",totalData);
+		m.addAttribute("totalData",totalData);
 		m.addAttribute("boards",boards);
 		return "board/boardList";
 	}
