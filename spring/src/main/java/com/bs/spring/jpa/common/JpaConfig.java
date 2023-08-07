@@ -19,9 +19,14 @@ public class JpaConfig {
 
 	
 	//생성할 객체를 bean으로 등록해서 사용하자
-	@Bean
+	@Bean(name="bstest")
 	public EntityManagerFactory entityManagerFactory() {
 		EntityManagerFactory factory=Persistence.createEntityManagerFactory("bstest");
+		return factory;
+	}
+	@Bean(name="web")
+	public EntityManagerFactory entityManagerFactoryWeb() {
+		EntityManagerFactory factory=Persistence.createEntityManagerFactory("web");
 		return factory;
 	}
 	

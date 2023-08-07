@@ -158,6 +158,29 @@
 		<a href="${path }/jpa/insertClub.do">다대다 테스트</a>
 	</h3>
 	
+	<h2>web계정의 테이블 조회하기</h2>
+	<h3>
+		<button onclick="getMembers();">전체회원 가져오기</button>
+	</h3>
+	<h2>web계정의 이름으로 회원조회</h2>
+	<h3>
+		<input type="text" id="name"><button onclick="searchMemberName();">검색</button>
+	</h3>
 	
+	
+	<script>
+	function searchMemberName(){
+		const name=$("#name").val();
+		$.get("${path}/web/members/"+name,data=>{
+			console.log(data);
+		})
+	}
+	
+	function getMembers(){
+		$.get("${path}/web/members",data=>{
+			console.log(data);
+		});
+	}
+	</script>
 </section>
 <jsp:include page="/WEB-INF/views/common/footer.jsp"/>

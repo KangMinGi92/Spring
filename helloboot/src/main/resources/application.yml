@@ -10,7 +10,22 @@ spring:
     url: jdbc:oracle:thin:@localhost:1521:xe
     username: spring
     password: spring
-
+    hikari:
+      minimum-idle: 10
+      maximum-pool-size: 50
+      auto-commit: false
+      connection-test-query: select 1 from dual
+      pool-name: bspool
+  jpa:
+    database: oracle
+    database-platform: org.hibernate.dialect.Oracle10gDialect
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+    
+    
+    
   mvc:
     view:
       prefix: /WEB-INF/views/

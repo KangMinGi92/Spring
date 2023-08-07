@@ -5,6 +5,11 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -19,9 +24,14 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Entity
+@Table(name="member")
 public class MemberDto implements UserDetails {
+	@Id
+	@Column(name="userid")
 	private String userId;
 	private String password;
+	@Column(name="username")
 	private String name;
 	private int age;
 	private String gender;
@@ -29,6 +39,7 @@ public class MemberDto implements UserDetails {
 	private String phone;
 	private String address;
 	private String hobby;
+	@Column(name="enrolldate")
 	private Date enrollDate;
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
