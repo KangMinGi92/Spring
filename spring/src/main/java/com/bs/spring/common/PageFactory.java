@@ -12,7 +12,7 @@ public class PageFactory {
 		int pageNo=((cPage-1)/pageBarSize)*pageBarSize+1;
 		int pageEnd=pageNo+pageBarSize-1;
 		
-		pageBar.append("<ul class='pagination justify-content-center pagination-sm'");
+		pageBar.append("<ul class='pagination justify-content-center pagination-sm'>");
 		
 		if(pageNo==1) {
 			pageBar.append("<li class='page-item disabled'>");
